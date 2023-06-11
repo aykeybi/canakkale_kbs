@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html><head>
+  <title>Çanakkale Kent Bilgi Sistemi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    #header {
+      background-color:#C8E0E3; 
+      color: #585858;
+      padding: 30px;
+      text-align: center;
+		margin-bottom: 20px;
+    }
+    
+    #header img {
+      width: 450px;
+      height: 250px;
+      margin-bottom: -20px;
+		margin-top: -20px;
+    }
+    
+    #buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap; 
+      margin-top: 20px;
+    }
+    
+    .button {
+      width: 180px; 
+      height: 0px; 
+      margin: 10px;
+      background-color: #f0f0f0;
+      border-radius: 50%; 
+      display: flex;
+      flex-direction: column; 
+      align-items: center;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      text-decoration: none;
+      transition: filter 0.3s ease;
+    }
+    
+    .button img {
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+      width: 180px; 
+      height: 140px; 
+      border-radius: 50%; 
+    }
+    
+    .button:hover {
+      background-color: #ccc;
+    }
+    
+    .button:hover img {
+      filter: none;
+    }
+    
+    .button span {
+      margin-top: 10px; 
+    }
+	  
+	.footer {
+  background-color: #ccc;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.creator-info {
+  display: inline-block;
+}
+
+.footer-image {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+
+
+
+
+
+
+  </style>
+	<script>
+  // Hava durumu bilgilerini alacak olan fonksiyon
+  function getWeather() {
+    // Hava durumu API'si tarafından sağlanan endpoint'i kullanarak istek yapın
+    fetch('https://api.weatherapi.com/v1/current.json?key=c3e6cdd6473c4255a1e15241231106&q=Canakkale')
+      .then(response => response.json())
+      .then(data => {
+        // Hava durumu bilgilerini alın
+        const location = data.location.name;
+        const temperature = data.current.temp_c;
+        const condition = data.current.condition.text;
+        
+        // Hava durumu bilgilerini HTML'e ekleyin
+        const weatherElement = document.getElementById('weather');
+        weatherElement.innerHTML = `
+          <p>Sıcaklık: ${temperature}°C</p>
+          <p>Durum: ${condition}</p>
+        `;
+      })
+      .catch(error => {
+        console.error('Hava durumu bilgileri alınırken bir hata oluştu:', error);
+      });
+  }
+  
+  // Sayfa yüklendiğinde hava durumu bilgilerini al
+  window.addEventListener('load', getWeather);
+</script>
+	
+	
+</head>
+<body>
+	
+  <div id="header">
+	  
+    <img src="images/canakkale (1).png" alt="Türk Bayrağı">
+    <h1>Çanakkale Kent Bilgi Sistemi</h1>
+	  <div id="weather"></div>
+  </div>
+  
+  <div id="buttons">
+    <a class="button" href="tarihi_mekanlar.html">
+      <img src="../kilitbahir/DJI_0013-11.jpg" alt="Turistik Mekanlar" />
+      <span>Tarihi Mekanlar</span>
+    </a>
+    <a class="button" href="Restaurantlar.html">
+      <img src="images/restaurant.jpg" alt="Etkinlik Takvimi" />
+      <span>Restaurantlar</span>
+    </a>
+    <a class="button" href="Etkinlikler.html">
+      <img src="images/konser.png" alt="Etkinlikler" />
+      <span>Etkinlik Bilgileri</span>
+    </a>
+    <a class="button" href="Önemli-kurumlar.html">
+      <img src="images/polis.png" alt="Harita Konumları" />
+      <span>Önemli Kurumlar</span>
+    </a>
+  </div>
+	
+	
+<footer class="footer">
+  <div class="creator-info">
+    <p>Oluşturan:</p>
+  </div>
+  <a href="https://www.linkedin.com/in/bahar-shirova-3b283816a/" target="_blank"><img src="images/linkedin.png" width="15px" height="15px" alt="LinkedIn 1"></a>
+  <a href="https://www.linkedin.com/in/faruk-ege-%C3%B6zen-4546651a4/" target="_blank"><img src="images/linkedin.png" width="15px" height="15px" alt="LinkedIn 2"></a>
+  <a href="https://www.linkedin.com/in/ibrahimkaanbahar/" target="_blank"><img src="images/linkedin.png" width="15px" height="15px" alt="LinkedIn 3"></a>
+</footer>
+	
+</body>
+</html>

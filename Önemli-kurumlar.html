@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Çanakkale'deki Kurumlar</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #8b0000;
+            margin-top: 50px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        li {
+            margin: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+            flex-basis: 300px;
+            text-align: center;
+        }
+
+        li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        li h2 {
+            color: #8b0000;
+            font-size: 24px;
+            margin-top: 0;
+        }
+
+        li p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+
+        li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid #8b0000;
+            transition: all 0.2s ease-in-out;
+        }
+
+        li a:hover {
+            border-bottom: 2px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Çanakkale'de Faaliyet Gösteren Önemli Kurumlar ve İletişim Numaraları</h1>
+    <ul id="liste">
+        <li onmouseover="hover(this)" onmouseout="hoverOff(this)">
+            <h2>Çanakkale İl Emniyet Müdürlüğü</h2>
+            <p>İletişim Numarası = 155</p>
+            <a href="https://canakkale.pol.tr/">Daha fazla bilgi</a>
+        </li>
+        <li onmouseover="hover(this)" onmouseout="hoverOff(this)">
+            <h2>Çanakkale İl Jandarma Komutanlığı</h2>
+            <p>İletişim Numarası = 156</p>
+            <a href="https://canakkale.jandarma.gov.tr/iletisim">Daha fazla bilgi</a>
+        </li>
+        <li onmouseover="hover(this)" onmouseout="hoverOff(this)">
+            <h2>Çanakkale Valiliği</h2>
+            <p>Geçiçi İletişim Numarası = 0(286) 217 19 99</p>
+            <a href="http://www.canakkale.gov.tr/">Daha fazla bilgi</a>
+        </li>
+        <li onmouseover="hover(this)" onmouseout="hoverOff(this)">
+            <h2>Çanakkale Belediyesi </h2>
+            <p>İletişim Numarası = 444 17 17</p>
+            <a href="https://www.canakkale.bel.tr/tr/sayfa/home">Daha fazla bilgi</a>
+        </li>
+        <li onmouseover="hover(this)" onmouseout="hoverOff(this)">
+            <h2>Çanakkale İl Özel İdaresi</h2>
+            <p>İletişim Numarası = (0286) 220 00 22 </p>
+            <a href="http://canakkaleilozelidaresi.gov.tr/">Daha fazla bilgi</a>
+        </li>
+        <li onmouseover="hover(this)" onmouseout="hoverOff(this)">
+            <h2>Çanakkale 112 </h2>
+            <p>İletişim Numarası = 112</p>
+            <a href="https://www.112.gov.tr/canakkale">Daha fazla bilgi</a>
+        </li>
+        <li onmouseover="hover(this)" onmouseout="hoverOff(this)">
+            <h2>Çanakkale İtfaiyesi </h2>
+            <p>İletişim Numarası = 110</p>
+            <a href="https://www.canakkale.bel.tr/tr/sayfa/1232-itfaiye-mudurlugu">Daha fazla bilgi</a>
+        </li>
+    </ul>
+</body>
+
+<script>
+		function hover(element)
+		{
+			element.style.backgroundColor = "#F94A29";
+			element.style.color = "#fff";
+		}
+		function hoverOff(element)
+		{
+			element.style.backgroundColor = "#fff";
+			element.style.color = "#333";
+		}
+	
+</script>

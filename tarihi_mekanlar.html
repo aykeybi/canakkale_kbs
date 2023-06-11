@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Çanakkale'nin Tarihi Mekanları</title>
+	<body background="images/bg.jpg">
+		
+	</body>
+	
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+			<link rel="stylesheet" href="css/tarihi_mekan_css.css">
+    <style>
+		#harita { width:400px; height:200px;}
+		#harita2{ width:400px; height:200px;}
+		#harita3{ width:400px; height:200px;}
+		#harita4{ width:400px; height:200px;}
+		#harita5{ width:400px; height:200px;}
+		#harita6{ width:400px; height:200px;}
+		#harita7{ width:400px; height:200px;}
+		#harita8{ width:400px; height:200px;}
+		#harita9{ width:400px; height:200px;}
+    </style>
+</head>
+	
+	
+<body>
+	
+	<center><img src="images/ayyildiz.png" width="100" height="75" alt="Konum"></center>
+<h1><em>Çanakkale'nin Tarihi Mekanları</em></h1>
+<div class="container"> 
+		   <div class="popup" id="aquapopup">
+				<img src="images/location.png" width="100" height="100" alt="Konum">
+					<h2> Çanakkale Şehitleri Anıtı Konumu </h2>
+				  <div id="harita">HARİTA</div>  
+			   
+	
+			   
+			   
+			   
+					<button type="button" onclick="closePopup()">Kapat</button>
+				</div>
+</div>
+	
+	
+	<div class="container2"> 
+				<div class="popup2" id="yalovapopup">
+				<img src="images/location.png" width="100" height="100" alt="Konum">
+					<h2> Yalova Mutfak Konumu </h2>
+				  <div id="harita2">HARİTA</div> 
+					<button type="button2" onclick="closePopup2()">Kapat</button>
+				</div>
+</div>
+	
+	
+<div class="container3"> 
+				<div class="popup3" id="intepepopup">
+				<img src="images/location.png" width="100" height="100" alt="Konum">
+					<h2> İntepe Manzara Konumu </h2>
+				  <div id="harita3">HARİTA</div> 
+					<button type="button3" onclick="closePopup3()">Kapat</button>
+				</div>
+			</div>
+	
+	
+<div class="container4"> 
+				<div class="popup4" id="cafeduportpopup">
+				<img src="images/location.png" width="100" height="100" alt="Konum">
+					<h2> Cafe Du Port Konumu </h2>
+				  <div id="harita4">HARİTA</div> 
+					<button type="button4" onclick="closePopup4()">Kapat</button>
+				</div>
+			</div>
+<div class="container5"> 
+				<div class="popup5" id="sardalyepopup">
+				<img src="images/location.png" width="100" height="100" alt="Konum">
+					<h2> Sardalye Balık Konumu </h2>
+				  <div id="harita5">HARİTA</div> 
+					<button type="button5" onclick="closePopup5()">Kapat</button>
+				</div>
+			</div>	
+	
+<div class="container6"> 
+				<div class="popup6" id="seasidepopup">
+				<img src="images/location.png" width="100" height="100" alt="Konum">
+					<h2> Sea Side Konumu </h2>
+				  <div id="harita6">HARİTA</div> 
+					<button type="button6" onclick="closePopup6()">Kapat</button>
+				</div>
+			</div>		
+<div class="container7"> 
+				<div class="popup7" id="filintapopup">
+				<img src="images/location.png" width="100" height="100" alt="Konum">
+					<h2> Filinta Plajı Konumu </h2>
+				  <div id="harita7">HARİTA</div> 
+					<button type="button7" onclick="closePopup7()">Kapat</button>
+				</div>
+			</div>
+	<div class="container8"> 
+				<div class="popup8" id="akolpopup">
+				<img src="images/location.png" width="100" height="100" alt="Konum">
+					<h2> Akol Balık Konumu </h2>
+				  <div id="harita8">HARİTA</div> 
+					<button type="button8" onclick="closePopup8()">Kapat</button>
+				</div>
+</div>
+<div class="container9"> 
+				<div class="popup9" id="saykapopup">
+				<img src="images/location.png" width="100" height="100" alt="Konum">
+					<h2> Şayka Restaurant Konumu </h2>
+				  <div id="harita9">HARİTA</div> 
+					<button type="button9" onclick="closePopup9()">Kapat</button>
+				</div>
+			</div>
+	
+	
+	
+    <ul>
+        <li>
+            <h2>Çanakkale Şehitleri Anıtı</h2>
+			<img src="images/besyildiz.png" width="75" height="20" alt="Konum"><br>
+			<em>I. Dünya Savaşı'nda hayatını kaybeden askerlerimizi anmak için yapılan anıt, Çanakkale'nin sembolü haline gelmiştir.</em>
+			
+			<p> <img src="images/canakkale.png" width="300" height="75" alt="Konum"></p>
+				
+			<a href="https://tr.wikipedia.org/wiki/%C3%87anakkale_%C5%9Eehitleri_An%C4%B1t%C4%B1">
+			<p><button type="submit" class="btn" id="btn">Detaylı Bilgi</button> </p></a>
+			
+			
+			<p><button type="submit" class="btn" id="aqua" onclick="openPopup()">Konum Gör</button> </p>
+			
+			
+			
+			
+        </li>
+        <li>
+           <h2>Kilitbahir Kalesi</h2>
+			<img src="images/dortyildiz.png" width="75" height="20" alt="Konum"><br>
+			<em>Kilitbahir Kalesi, yani "denizin kilidi kalesi", 1452 yılında Çanakkale Boğazı'nın Avrupa kıyısına inşa edilen kaledir.</em>
+<p> <img src="images/kilitbahir.png" width="300" height="75" alt="Konum"></p>
+				
+			<a href="https://tr.wikipedia.org/wiki/Kilitbahir">
+			<p><button type="submit" class="btn" id="btn">Detaylı Bilgi</button> </p></a>
+			
+			
+            <button type="submit" class="btn2" id="yalova" onclick="openPopup2()">Konum Gör</button>
+			
+        </li>
+        <li>
+            <h2>Çimenlik Kalesi</h2>
+			<img src="images/ucyildiz.png" width="75" height="20" alt="Konum"><br>
+			<em>Kale-i Sultaniye veya Çimenlik Kalesi, 1462 yılında Çanakkale Boğazı'nın Asya kıyısına dikilen bir kaledir. Günümüzde müze olarak kullanılmaktadır.</em>
+			
+			<p> <img src="images/cimenlik.png" width="300" height="75" alt="Konum"></p>
+				
+			<a href="https://www.kulturportali.gov.tr/turkiye/canakkale/gezilecekyer/cimenlik-kalesi">
+			<p><button type="submit" class="btn" id="btn">Detaylı Bilgi</button> </p></a>
+			
+                <button type="submit" class="btn3" id="intepe" onclick="openPopup3()">Konum Gör</button>
+        </li>
+		
+		
+		
+        <li>
+            <h2>Tarihi Saat Kulesi</h2>
+			<img src="images/ucyildiz.png" width="75" height="20" alt="Konum"><br>
+			<em>Vitalis Gaptiorele'nin finansmanıyla Sancakbeyi Cemil Paşa tarafından 1896'da yaptırılmıştır.Kule 20 metre yüksekliğinde olup beş katlıdır.</em>
+			
+			<p> <img src="images/saat-kulesi.png" width="300" height="75" alt="Konum"></p>
+				
+			<a href="https://tr.wikipedia.org/wiki/%C3%87anakkale_Saat_Kulesi">
+			<p><button type="submit" class="btn" id="btn">Detaylı Bilgi</button> </p></a>
+            <button type="submit" class="btn4" id="cafeduport" onclick="openPopup4()">Konum Gör</button>
+        </li>
+        <li>
+            <h2>Tarihi Aynalı Çarşı</h2>
+			<img src="images/besyildiz.png" width="75" height="20" alt="Konum"><br>
+			<em>1890 senesinde şehrin Musevi cemaatinin ileri gelenlerinden Eliyau Hallio tarafından yaptırılmıştır.</em>
+			
+			<p> <img src="images/aynalicarsi.png" width="300" height="75" alt="Konum"></p>
+				
+		  <a href="https://www.kulturportali.gov.tr/turkiye/canakkale/gezilecekyer/aynali-carsi">
+			<p><button type="submit" class="btn" id="btn">Detaylı Bilgi</button> </p></a>
+            <button type="submit" class="btn5" id="sardalye" onclick="openPopup5()">Konum Gör</button>
+        </li>
+        <li>
+            <h2>Truva Antik Kenti</h2>
+			<img src="images/besyildiz.png" width="75" height="20" alt="Konum"><br>
+			<em>Truva, Kaz Dağı eteklerinde tarihî bir kenttir. Çanakkale il sınırları içinde, günümüzde Hisarlık olarak adlandırılan arkeolojik bölgede yer alır.</em>
+			
+			<p> <img src="images/truva-antik-kenti.png" width="300" height="75" alt="Konum"></p>
+				
+		  <a href="https://www.kulturportali.gov.tr/portal/truvaantikkenti">
+			<p><button type="submit" class="btn" id="btn">Detaylı Bilgi</button> </p></a>
+            <button type="submit" class="btn6" id="seaside" onclick="openPopup6()">Konum Gör</button>
+        </li>
+        <li>
+            <h2>Assos Antik Kenti</h2>
+			<img src="images/besyildiz.png" width="75" height="20" alt="Konum"><br>
+			<em>Antik Çağda Troas diye adlandırılan bölgenin güney ucunda volkanik bir tepenin zirvesi ve yamaçlarında, Midilli adasının karşısında kurulmuştur</em>
+			
+			<p> <img src="images/assos-antik-kenti.png" width="300" height="75" alt="Konum"></p>
+				
+		  <a href="https://www.assosrehberim.com/nm-Assos_Antik_Kenti-cp-100">
+			<p><button type="submit" class="btn" id="btn">Detaylı Bilgi</button> </p></a>
+                <button type="submit" class="btn7" id="filinta" onclick="openPopup7()">Konum Gör</button>
+        </li>
+        <li>
+            <h2>Bozcaada Kalesi</h2>
+			<img src="images/dortyildiz.png" width="75" height="20" alt="Konum"><br>
+			<em>Tarihte istilalara her zaman açık olan Bozcaada'yı koruyabilmek için kurulan kalenin, kim tarafından yapıldığı bilinmiyor.</em>
+			
+			<p> <img src="images/bozcaada-kalesi.png" width="300" height="75" alt="Konum"></p>
+				
+		  <a href="https://www.kulturportali.gov.tr/turkiye/canakkale/gezilecekyer/bozcaada-kalesi">
+			<p><button type="submit" class="btn" id="btn">Detaylı Bilgi</button> </p></a>
+            <button type="submit" class="btn8" id="akol" onclick="openPopup8()">Konum Gör</button>
+        </li>
+        <li>
+            <h2>Geyikli Liman</h2>
+			<img src="images/ucyildiz.png" width="75" height="20" alt="Konum"><br>
+			<em>Odunluk İskelesi olarak bilinen liman, Osmanlılardan yakın zamana kadar faal olarak kullanılmış bir iskeledir. </em>
+			
+			<p> <img src="images/geyikli-limanı.png" width="300" height="75" alt="Konum"></p>
+				
+		  <a href="https://www.canakkalegeyikli.bel.tr/ksayfalar/sayfa/2/6/tarihce">
+			<p><button type="submit" class="btn" id="btn">Detaylı Bilgi</button> </p></a>
+            <button type="submit" class="btn9" id="sayka" onclick="openPopup9()">Konum Gör</button>
+        </li>
+    </ul>
+	
+	
+	<script>
+	
+	let popup = document.getElementById("aquapopup");
+	let popup2 = document.getElementById("yalovapopup");
+	let popup3 = document.getElementById("intepepopup");
+	let popup4 = document.getElementById("cafeduportpopup");
+	let popup5 = document.getElementById("sardalyepopup");
+	let popup6 = document.getElementById("seasidepopup");
+	let popup7 = document.getElementById("filintapopup");
+	let popup8 = document.getElementById("akolpopup");
+	let popup9 = document.getElementById("saykapopup");
+		function openPopup(){
+			popup.classList.add("open-popup");
+		}
+		
+		function openPopup2(){
+			popup2.classList.add("open-popup2");
+		}
+		function openPopup3(){
+			popup3.classList.add("open-popup3");
+		}
+		function openPopup4(){
+			popup4.classList.add("open-popup4");
+		}
+		function openPopup5(){
+			popup5.classList.add("open-popup5");
+		}
+		function openPopup6(){
+			popup6.classList.add("open-popup6");
+		}
+		function openPopup7(){
+			popup7.classList.add("open-popup7");
+		}
+		function openPopup8(){
+			popup8.classList.add("open-popup8");
+		}
+		function openPopup9(){
+			popup9.classList.add("open-popup9");
+		}
+
+		
+				function closePopup(){
+			popup.classList.remove("open-popup");
+		}
+			function closePopup2(){
+			popup2.classList.remove("open-popup2");
+		}
+		function closePopup3(){
+			popup3.classList.remove("open-popup3");
+		}
+		function closePopup4(){
+			popup4.classList.remove("open-popup4");
+		}
+		function closePopup5(){
+			popup5.classList.remove("open-popup5");
+		}
+		function closePopup6(){
+			popup6.classList.remove("open-popup6");
+		}
+		function closePopup7(){
+			popup7.classList.remove("open-popup7");
+		}
+		function closePopup8(){
+			popup8.classList.remove("open-popup8");
+		}
+		function closePopup9(){
+			popup9.classList.remove("open-popup9");
+		}
+	
+	</script>
+<script>
+		/* Çanakkale Şehitleri Anıtı */
+var haritam = L.map('harita').setView([40.04998110109424, 26.219129456626902],14);
+		var marker = new L.Marker([40.04998110109424, 26.219129456626902]);
+		marker.addTo(haritam);
+	marker.bindPopup('Çanakkale Şehitleri Anıtı').openPopup();
+	
+	
+	
+	
+var OpenStreetMap_Mapnik = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
+{
+maxZoom: 19,
+minZoom: 13,
+}).addTo(haritam);
+		/* Çanakkale Şehitleri Anıtı Son */
+		
+		/* Yalova Restaurant */
+		var haritam2 = L.map('harita2').setView([40.147914891322095, 26.379432424095274],14);
+		var marker = new L.Marker([40.147914891322095, 26.379432424095274]);
+		marker.addTo(haritam2);
+	marker.bindPopup('Kilitbahir Kalesi').openPopup();
+var OpenStreetMap_Mapnik = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
+{
+maxZoom: 19,
+minZoom: 13,
+}).addTo(haritam2);			
+		/* Yalova Restaurant*/ 
+		
+		
+		/* İntepe Manzara Restaurant */
+		var haritam3 = L.map('harita3').setView([40.146628694583214, 26.3992058971093],14);
+		var marker = new L.Marker([40.146628694583214, 26.3992058971093]);
+		marker.addTo(haritam3);
+	marker.bindPopup('Çimenlik Kalesi').openPopup();
+var OpenStreetMap_Mapnik = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
+{
+maxZoom: 19,
+minZoom: 13,
+}).addTo(haritam3);			
+		/* İntepe Manzara Restaurant*/ 
+		
+		/* Cafe Du Port Restaurant */
+		var haritam4 = L.map('harita4').setView([40.14975178373992, 26.40207035478074],14);
+		var marker = new L.Marker([40.14975178373992, 26.40207035478074]);
+		marker.addTo(haritam4);
+	marker.bindPopup('Tarihi Saat Kulesi').openPopup();
+var OpenStreetMap_Mapnik = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
+{
+maxZoom: 19,
+minZoom: 13,
+}).addTo(haritam4);			
+		/* Cafe Du Port Restaurant*/ 
+	
+	/* Sardalye Balık */
+	
+		var haritam5 = L.map('harita5').setView([40.14635731410384, 26.403804399992918],14);
+		var marker = new L.Marker([40.14635731410384, 26.403804399992918]);
+		marker.addTo(haritam5);
+	marker.bindPopup('Aynalı Çarşı').openPopup();
+var OpenStreetMap_Mapnik = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
+{
+maxZoom: 19,
+minZoom: 13,
+}).addTo(haritam5);			
+		
+	/* Sardalye Balık Son */
+	
+	
+	/* Sea Side */
+	
+		var haritam6 = L.map('harita6').setView([39.95777429635778, 26.239707810595654],14);
+		var marker = new L.Marker([39.95777429635778, 26.239707810595654]);
+		marker.addTo(haritam6);
+	marker.bindPopup('Truva Antik Kenti').openPopup();
+var OpenStreetMap_Mapnik = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
+{
+maxZoom: 19,
+minZoom: 13,
+}).addTo(haritam6);			
+		
+	/* Sea Side Son */
+		/* Filinta */
+	
+		var haritam7 = L.map('harita7').setView([39.49027244840627, 26.335174998935795],14);
+		var marker = new L.Marker([39.49027244840627, 26.335174998935795]);
+		marker.addTo(haritam7);
+	marker.bindPopup('Assos Antik Kenti').openPopup();
+var OpenStreetMap_Mapnik = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
+{
+maxZoom: 19,
+minZoom: 13,
+}).addTo(haritam7);			
+		
+	/* Filinta Son */
+	/* Akol Balık */
+	
+		var haritam8 = L.map('harita8').setView([39.835855348981774, 26.072629544975957],14);
+		var marker = new L.Marker([39.835855348981774, 26.072629544975957]);
+		marker.addTo(haritam8);
+	marker.bindPopup('Bozcaada Kalesi').openPopup();
+var OpenStreetMap_Mapnik = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
+{
+maxZoom: 19,
+minZoom: 13,
+}).addTo(haritam8);			
+		
+	/* Akol Balık Son */
+	/* Sayka */
+	
+		var haritam9 = L.map('harita9').setView([39.782917060510414, 26.157812030659738],14);
+		var marker = new L.Marker([39.782917060510414, 26.157812030659738]);
+		marker.addTo(haritam9);
+	marker.bindPopup('Odunluk (Geyikli) İskelesi').openPopup();
+var OpenStreetMap_Mapnik = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
+{
+maxZoom: 19,
+minZoom: 13,
+}).addTo(haritam9);			
+		
+	/* Filinta Son */
+	
+	
+	
+	
+	
+</script>
+	
+	
+	
+	
+<script src=""></script>
+	
+	
+	
+	
+</body>
+<script>
+		function hover(element)
+		{
+			element.style.transition = "width 2s, height 2s, transform 2s";
+			element.style.transform = "rotate(360deg)";
+		}
+		function hoverOff(element)
+		{
+			element.style.transition = "width 2s, height 2s, transform 2s";
+			element.style.transform = "rotate(-360deg)";
+		}
+
+</script>
+	
+	
+	
+	
+	
+	
+</html>

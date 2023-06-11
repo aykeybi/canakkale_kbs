@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Çanakkale'de Gidilebilecek En İyi Restaurantlar</title>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+			<link rel="stylesheet" href="css/style.css">
+    <style>
+		#harita { width:400px; height:200px;}
+		#harita2{ width:400px; height:200px;}
+		#harita3{ width:400px; height:200px;}
+		#harita4{ width:400px; height:200px;}
+		#harita5{ width:400px; height:200px;}
+		#harita6{ width:400px; height:200px;}
+		#harita7{ width:400px; height:200px;}
+		#harita8{ width:400px; height:200px;}
+		#harita9{ width:400px; height:200px;}
+    </style>
+</head>
+	
+	
+<body>
+    <h1>Çanakkale'de Gidilebilecek En iyi Restoranlar</h1>
+	
+	 <div class="container"> 
+				<div class="popup" id="aquapopup">
+				<img src="images/location.png" width="100" height="100" alt="Konum">
+					<h2> Aqua Mutfak Konumu </h2>
+				  <div id="harita">HARİTA</div>  
+					<button type="button" onclick="closePopup()">Kapat</button>
+				</div>
+</div>
+	
+	
+	<div class="container2"> 
+				<div class="popup2" id="yalovapopup">
+				<img src="images/location.png" width="100" height="100" alt="Konum">
+					<h2> Yalova Mutfak Konumu </h2>
+				  <div id="harita2">HARİTA</div> 
+					<button type="button2" onclick="closePopup2()">Kapat</button>
+				</div>
+</div>
+	
+	
+<div class="container3"> 
+				<div class="popup3" id="intepepopup">
+				<img src="images/location.png" width="100" height="100" alt="Konum">
+					<h2> İntepe Manzara Konumu </h2>
+				  <div id="harita3">HARİTA</div> 
+					<button type="button3" onclick="closePopup3()">Kapat</button>
+				</div>
+			</div>
+	
+	
+<div class="container4"> 
+				<div class="popup4" id="cafeduportpopup">
+				<img src="images/location.png" width="100" height="100" alt="Konum">
+					<h2> Cafe Du Port Konumu </h2>
+				  <div id="harita4">HARİTA</div> 
+					<button type="button4" onclick="closePopup4()">Kapat</button>
+				</div>
+			</div>
+<div class="container5"> 
+				<div class="popup5" id="sardalyepopup">
+				<img src="images/location.png" width="100" height="100" alt="Konum">
+					<h2> Sardalye Balık Konumu </h2>
+				  <div id="harita5">HARİTA</div> 
+					<button type="button5" onclick="closePopup5()">Kapat</button>
+				</div>
+			</div>	
+	
+<div class="container6"> 
+				<div class="popup6" id="seasidepopup">
+				<img src="images/location.png" width="100" height="100" alt="Konum">
+					<h2> Sea Side Konumu </h2>
+				  <div id="harita6">HARİTA</div> 
+					<button type="button6" onclick="closePopup6()">Kapat</button>
+				</div>
+			</div>		
+<div class="container7"> 
+				<div class="popup7" id="filintapopup">
+				<img src="images/location.png" width="100" height="100" alt="Konum">
+					<h2> Filinta Plajı Konumu </h2>
+				  <div id="harita7">HARİTA</div> 
+					<button type="button7" onclick="closePopup7()">Kapat</button>
+				</div>
+			</div>
+	<div class="container8"> 
+				<div class="popup8" id="akolpopup">
+				<img src="images/location.png" width="100" height="100" alt="Konum">
+					<h2> Akol Balık Konumu </h2>
+				  <div id="harita8">HARİTA</div> 
+					<button type="button8" onclick="closePopup8()">Kapat</button>
+				</div>
+</div>
+<div class="container9"> 
+				<div class="popup9" id="saykapopup">
+				<img src="images/location.png" width="100" height="100" alt="Konum">
+					<h2> Şayka Restaurant Konumu </h2>
+				  <div id="harita9">HARİTA</div> 
+					<button type="button9" onclick="closePopup9()">Kapat</button>
+				</div>
+			</div>
+	
+	
+	
+    <ul>
+        <li>
+            <h2>Aqua Mutfak</h2>
+			<p><img src="images/dortyildiz.png" width="75" height="20" alt="Konum"></p>
+            <p>
+                Merkeze Uzaklık =<b>5.5 km </b>
+                <br>En İyi Ürün =<b>Özel Soslu Levrek Balığı</b>
+                <br> Rezervasyon Numarası =<b>0530 909 99 45</b>
+            </p>
+				
+				
+			<button type="submit" class="btn" id="aqua" onclick="openPopup()">Konum Gör</button>
+			
+			
+        </li>
+        <li>
+            <h2>Yalova Restaurant</h2>
+			<p><img src="images/ucyildiz.png" width="75" height="20" alt="Konum"></p>
+            <p>
+                Merkeze Uzaklık =<b>0.1 km </b>
+                <br>En İyi Ürün =<b>Özel Soslu Levrek Balığı</b>
+                <br> Rezervasyon Numarası =<b>0544 117 10 45</b>
+            </p>
+			
+			
+            <button type="submit" class="btn2" id="yalova" onclick="openPopup2()">Konum Gör</button>
+			
+        </li>
+        <li>
+            <h2>İntepe Manzara</h2>
+			<p><img src="images/besyildiz.png" width="75" height="20" alt="Konum"></p>
+            <p>
+                Merkeze Uzaklık =<b>11 km</b>
+                <br> En İyi Ürün =<b>Erzurum Usülü Cağ Kebap</b>
+                <br> Rezervasyon Numarası =<b>(0286)2233366</b>
+                </p>
+                <button type="submit" class="btn3" id="intepe" onclick="openPopup3()">Konum Gör</button>
+        </li>
+		
+		
+		
+        <li>
+            <h2>Cafe Du Port Güzelyalı</h2>
+			<p><img src="images/dortyildiz.png" width="75" height="20" alt="Konum"></p>
+            <p>
+                Merkeze Uzaklık =<b> 7.6 km</b>
+                <br>En İyi Ürün =<b> Chai Tea Latte</b>
+                <br> Rezervasyon Numarası =<b>0286 22 02</b>
+            </p>
+            <button type="submit" class="btn4" id="cafeduport" onclick="openPopup4()">Konum Gör</button>
+        </li>
+        <li>
+            <h2>Sardalya Balık</h2>
+			<p><img src="images/ucyildiz.png" width="75" height="20" alt="Konum"></p>
+            <p>
+                Merkeze Uzaklık =<b>1.2 km</b>
+                <br>En İyi Ürün =<b>Sardalya</b>
+                <br> Rezervasyon Numarası =<b>0286 213 48 48</b>
+            </p>
+            <button type="submit" class="btn5" id="sardalye" onclick="openPopup5()">Konum Gör</button>
+        </li>
+        <li>
+            <h2>Sea Side Restaurant</h2>
+			<p><img src="images/besyildiz.png" width="75" height="20" alt="Konum"></p>
+            <p>
+                Merkeze Uzaklık =<b> 0.1 km</b>
+                <br>En İyi Ürün =<b> BBQ Burger</b>
+                <br> Rezervasyon Numarası =<b>0286 214 27 26</b>
+            </p>
+            <button type="submit" class="btn6" id="seaside" onclick="openPopup6()">Konum Gör</button>
+        </li>
+        <li>
+            <h2>Filinta Plaj Restaurant</h2>
+			<p><img src="images/dortyildiz.png" width="75" height="20" alt="Konum"></p>
+            <p>
+                Merkeze Uzaklık =<b> 91 km</b>
+                <br>En İyi Ürün =<b>İtalyan Usülü Pizza</b>
+                <br> Rezervasyon Numarası =<b>0532 471 26 28</b>
+            </p>
+                <button type="submit" class="btn7" id="filinta" onclick="openPopup7()">Konum Gör</button>
+        </li>
+        <li>
+            <h2>Akol Balık Restaurant</h2>
+			<p><img src="images/besyildiz.png" width="75" height="20" alt="Konum"></p>
+            <p>
+                Merkeze Uzaklık =<b>0.2 km</b>
+                <br>En İyi Ürün =<b> Fırınlanmış Kalamar</b>
+                <br> Rezervasyon Numarası =<b>0286 217 94 56</b>
+            </p>
+            <button type="submit" class="btn8" id="akol" onclick="openPopup8()">Konum Gör</button>
+        </li>
+        <li>
+            <h2>Şayka Restaurant</h2>
+			<p><img src="images/besyildiz.png" width="75" height="20" alt="Konum"></p>
+            <p>
+                Merkeze Uzaklık =<b>0.5 km</b>
+                <br>En İyi Ürün =<b>Ahtapot Salatası</b>
+                <br> Rezervasyon Numarası =<b>0537 834 78 86</b>
+            </p>
+            <button type="submit" class="btn9" id="sayka" onclick="openPopup9()">Konum Gör</button>
+        </li>
+    </ul>
+	
+	
+	<script>
+	
+	let popup = document.getElementById("aquapopup");
+	let popup2 = document.getElementById("yalovapopup");
+	let popup3 = document.getElementById("intepepopup");
+	let popup4 = document.getElementById("cafeduportpopup");
+	let popup5 = document.getElementById("sardalyepopup");
+	let popup6 = document.getElementById("seasidepopup");
+	let popup7 = document.getElementById("filintapopup");
+	let popup8 = document.getElementById("akolpopup");
+	let popup9 = document.getElementById("saykapopup");
+		function openPopup(){
+			popup.classList.add("open-popup");
+		}
+		
+		function openPopup2(){
+			popup2.classList.add("open-popup2");
+		}
+		function openPopup3(){
+			popup3.classList.add("open-popup3");
+		}
+		function openPopup4(){
+			popup4.classList.add("open-popup4");
+		}
+		function openPopup5(){
+			popup5.classList.add("open-popup5");
+		}
+		function openPopup6(){
+			popup6.classList.add("open-popup6");
+		}
+		function openPopup7(){
+			popup7.classList.add("open-popup7");
+		}
+		function openPopup8(){
+			popup8.classList.add("open-popup8");
+		}
+		function openPopup9(){
+			popup9.classList.add("open-popup9");
+		}
+
+		
+				function closePopup(){
+			popup.classList.remove("open-popup");
+		}
+			function closePopup2(){
+			popup2.classList.remove("open-popup2");
+		}
+		function closePopup3(){
+			popup3.classList.remove("open-popup3");
+		}
+		function closePopup4(){
+			popup4.classList.remove("open-popup4");
+		}
+		function closePopup5(){
+			popup5.classList.remove("open-popup5");
+		}
+		function closePopup6(){
+			popup6.classList.remove("open-popup6");
+		}
+		function closePopup7(){
+			popup7.classList.remove("open-popup7");
+		}
+		function closePopup8(){
+			popup8.classList.remove("open-popup8");
+		}
+		function closePopup9(){
+			popup9.classList.remove("open-popup9");
+		}
+	
+	</script>
+<script>
+		/* Aqua Mutfak */
+var haritam = L.map('harita').setView([40.096803285251234, 26.365401883550646],14);
+		var marker = new L.Marker([40.096803285251234, 26.365401883550646]);
+		marker.addTo(haritam);
+	marker.bindPopup('Aqua Mutfak').openPopup();
+	
+	
+	
+	
+var OpenStreetMap_Mapnik = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
+{
+maxZoom: 19,
+minZoom: 13,
+}).addTo(haritam);
+		/* Aqua Mutfak Son */
+		
+		/* Yalova Restaurant */
+		var haritam2 = L.map('harita2').setView([40.14956328714213, 26.40063494122312],14);
+		var marker = new L.Marker([40.14956328714213, 26.40063494122312]);
+		marker.addTo(haritam2);
+	marker.bindPopup('Yalova Restaurant').openPopup();
+var OpenStreetMap_Mapnik = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
+{
+maxZoom: 19,
+minZoom: 13,
+}).addTo(haritam2);			
+		/* Yalova Restaurant*/ 
+		
+		
+		/* İntepe Manzara Restaurant */
+		var haritam3 = L.map('harita3').setView([40.01618995330279, 26.329639007738155],14);
+		var marker = new L.Marker([40.01618995330279, 26.329639007738155]);
+		marker.addTo(haritam3);
+	marker.bindPopup('İntepe Manzara Restaurant').openPopup();
+var OpenStreetMap_Mapnik = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
+{
+maxZoom: 19,
+minZoom: 13,
+}).addTo(haritam3);			
+		/* İntepe Manzara Restaurant*/ 
+		
+		/* Cafe Du Port Restaurant */
+		var haritam4 = L.map('harita4').setView([40.04478402645348, 26.34672358199991],14);
+		var marker = new L.Marker([40.04478402645348, 26.34672358199991]);
+		marker.addTo(haritam4);
+	marker.bindPopup('Cafe Du Port').openPopup();
+var OpenStreetMap_Mapnik = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
+{
+maxZoom: 19,
+minZoom: 13,
+}).addTo(haritam4);			
+		/* Cafe Du Port Restaurant*/ 
+	
+	/* Sardalye Balık */
+	
+		var haritam5 = L.map('harita5').setView([40.150254780706774, 26.403455295199592],14);
+		var marker = new L.Marker([40.150254780706774, 26.403455295199592]);
+		marker.addTo(haritam5);
+	marker.bindPopup('Sardalya Balık').openPopup();
+var OpenStreetMap_Mapnik = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
+{
+maxZoom: 19,
+minZoom: 13,
+}).addTo(haritam5);			
+		
+	/* Sardalye Balık Son */
+	
+	
+	/* Sea Side */
+	
+		var haritam6 = L.map('harita6').setView([40.15011518299389, 26.401855281705473],14);
+		var marker = new L.Marker([40.15011518299389, 26.401855281705473]);
+		marker.addTo(haritam6);
+	marker.bindPopup('Sea Side Restaurant').openPopup();
+var OpenStreetMap_Mapnik = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
+{
+maxZoom: 19,
+minZoom: 13,
+}).addTo(haritam6);			
+		
+	/* Sea Side Son */
+		/* Filinta */
+	
+		var haritam7 = L.map('harita7').setView([40.09201957905091, 26.39882888712424],14);
+		var marker = new L.Marker([40.09201957905091, 26.39882888712424]);
+		marker.addTo(haritam7);
+	marker.bindPopup('Filinta Restaurant').openPopup();
+var OpenStreetMap_Mapnik = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
+{
+maxZoom: 19,
+minZoom: 13,
+}).addTo(haritam7);			
+		
+	/* Filinta Son */
+	/* Akol Balık */
+	
+		var haritam8 = L.map('harita8').setView([40.15257350677835, 26.406919439343085],14);
+		var marker = new L.Marker([40.15257350677835, 26.406919439343085]);
+		marker.addTo(haritam8);
+	marker.bindPopup('Akol Balık Restaurant').openPopup();
+var OpenStreetMap_Mapnik = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
+{
+maxZoom: 19,
+minZoom: 13,
+}).addTo(haritam8);			
+		
+	/* Akol Balık Son */
+	/* Sayka */
+	
+		var haritam9 = L.map('harita9').setView([40.15389507523447, 26.408215039376135],14);
+		var marker = new L.Marker([40.15389507523447, 26.408215039376135]);
+		marker.addTo(haritam9);
+	marker.bindPopup('Şayka Restaurant').openPopup();
+var OpenStreetMap_Mapnik = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
+{
+maxZoom: 19,
+minZoom: 13,
+}).addTo(haritam9);			
+		
+	/* Filinta Son */
+	
+	
+	
+	
+	
+</script>
+	
+	
+	
+	
+<script src=""></script>
+	
+	
+	
+	
+</body>
+<script>
+		function hover(element)
+		{
+			element.style.transition = "width 2s, height 2s, transform 2s";
+			element.style.transform = "rotate(360deg)";
+		}
+		function hoverOff(element)
+		{
+			element.style.transition = "width 2s, height 2s, transform 2s";
+			element.style.transform = "rotate(-360deg)";
+		}
+
+</script>
+	
+	
+	
+	
+	
+	
+</html>
